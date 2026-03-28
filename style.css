@@ -1,0 +1,909 @@
+/* ── ROOT VARIABLES ─────────────────────── */
+:root {
+  --primary: #39ff14;
+  --primary-dark: #2ecc71;
+  --accent: #ffd700;
+  --accent-glow: #ffcc00;
+  --text-main: #f0f8ff;
+  --text-light: #ffffff;
+  --card-bg: rgba(15, 12, 41, 0.7);
+  --border-glow: 0 0 15px rgba(57, 255, 20, 0.5);
+  --shadow-glow: 0 10px 30px rgba(57, 255, 20, 0.25);
+}
+/* ── RESET & BASE ───────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body /* ── BODY & GLOBAL ──────────────────────── */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: var(--text-main);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* ── TYPOGRAPHY & GRADIENT TEXT ─────────────── */
+h1,
+h2,
+h3,
+.section-title {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+/* ── NAVBAR ──────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(15, 12, 41, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(57, 255, 20, 0.1);
+}
+/* ── BUTTONS ─────────────────────────────── */
+.btn-primary,
+.btn-whatsapp,
+.contact-form button {
+  background: var(--primary);
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--border-glow);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.7);
+}
+/* ── CARDS ───────────────────────────────── */
+.skill-card,
+.portfolio-card {
+  background: var(--card-bg);
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card:hover,
+.portfolio-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-10px);
+}
+
+.portfolio-tags span {
+  background: rgba(255, 215, 0, 0.2);
+  color: var(--accent-glow);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.logo-icon {
+  color: #6c63ff;
+  font-size: 1.5rem;
+}
+
+/* Menu Links */
+.navbar__links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.navbar__links a {
+  color: #cccccc;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.navbar__links a:hover {
+  color: #ffffff;
+}
+
+/* Tombol CTA */
+.btn-primary {
+  background-color: #6c63ff;
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #574fd6;
+}
+/* ── HERO ───────────────────────────────────── */
+.hero {
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.hero__content {
+  max-width: 640px;
+  text-align: center;
+}
+
+.hero__badge {
+  display: inline-block;
+  background-color: rgba(108, 99, 255, 0.2);
+  color: #a29bfe;
+  border: 1px solid #6c63ff;
+  padding: 4px 16px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #6c63ff;
+}
+
+.hero__desc {
+  color: #b0b0cc;
+  font-size: 1.1rem;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  border: 2px solid #6c63ff;
+  color: #6c63ff;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: #6c63ff;
+  color: #ffffff;
+}
+/* ── CONTAINER (utility class) ──────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ── SKILLS SECTION ─────────────────────────── */
+.skills {
+  padding: 96px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666666;
+  margin-bottom: 56px;
+}
+
+/* ── CSS GRID: 3 kolom ──────────────────────── */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── SKILL CARD ─────────────────────────────── */
+.skill-card {
+  background-color: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.skill-card p {
+  color: #666666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+/* ════════════════════════════════════════════
+   RESPONSIVE DESIGN — Mobile First Override
+   Breakpoints: 768px (tablet), 1024px (desktop)
+═══════════════════════════════════════════════ */
+
+/* ── TABLET & ke bawah (max 1023px) ────────── */
+@media (max-width: 1023px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+}
+
+/* ── MOBILE (max 767px) ─────────────────────── */
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__desc {
+    font-size: 1rem;
+  }
+
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .skills {
+    padding: 64px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+/* ── FOOTER ─────────────────────────────────── */
+.footer {
+  background-color: #1a1a2e;
+  padding: 32px 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer__brand {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.footer__copy {
+  color: #888888;
+  font-size: 0.85rem;
+}
+
+.footer__links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__links a {
+  color: #888888;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* ── ABOUT ME / BIODATA ─────────────────────── */
+.about-me {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-photo {
+  flex: 0 0 280px;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.bio-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+}
+
+.bio-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.bio-list strong {
+  display: inline-block;
+  width: 140px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo {
+    margin-bottom: 2rem;
+  }
+
+  .profile-img {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+.portfolio {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.portfolio-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.portfolio-info {
+  padding: 20px;
+}
+
+.portfolio-tags {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.portfolio-tags span {
+  background: #e0e0e0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin: 40px auto;
+  max-width: 1400px;
+}
+/* Navbar links hover */
+.navbar__links a {
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+/* ── CONTACT SECTION ─────────────────────── */
+.contact {
+  padding: 80px 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.whatsapp-big {
+  margin: 40px 0;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #25d366;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: #20b358;
+  transform: translateY(-3px);
+}
+
+.whatsapp-icon {
+  font-size: 2rem;
+}
+
+.whatsapp-number {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+  font-size: 1.1rem;
+}
+
+.contact-list li {
+  margin: 12px 0;
+}
+
+.contact-list a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Floating WhatsApp Button (pojok kanan bawah) */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn-whatsapp {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* DARK MODE */
+.dark-btn {
+  padding: 8px 16px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* CSS Variables */
+.dark-mode {
+  --bg-color: #1a1a2e;
+  --text-color: #e0e0e0;
+  --navbar-bg: #16213e;
+  --border-color: #334155;
+  --accent: #00d4ff;
+}
+
+/* Terapkan ke seluruh halaman */
+.dark-mode,
+.dark-mode body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Navbar */
+.dark-mode .navbar {
+  background-color: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dark-mode .navbar__links a {
+  color: var(--text-color) !important;
+}
+
+.dark-mode .navbar__links a:hover {
+  color: var(--accent) !important;
+}
+
+/* Tombol Dark Mode */
+.dark-mode .dark-btn {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+}
+
+.dark-mode .dark-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tombol Hire Me */
+.dark-mode .btn-primary {
+  background-color: var(--accent) !important;
+  color: #000 !important;
+}
+
+/* Umum untuk section/card */
+.dark-mode section,
+.dark-mode .card,
+.dark-mode .container {
+  background-color: #16213e !important;
+  color: var(--text-color) !important;
+}
+* {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ==================== COUNTER MINUM AIR ==================== */
+
+.counter-section {
+  text-align: center;
+  padding: 60px 20px;
+  transition: background-color 0.4s ease;
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+#angka-counter {
+  font-size: 72px;
+  font-weight: bold;
+  min-width: 120px;
+  transition: color 0.4s ease;
+}
+
+/* Tombol + dan - */
+.counter-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #2e74b5;
+  background: white;
+  font-size: 28px;
+  cursor: pointer;
+  color: #2e74b5;
+  transition: all 0.3s ease;
+}
+
+.counter-btn:hover {
+  background: #2e74b5;
+  color: white;
+  transform: scale(1.08);
+}
+
+/* ==================== DARK MODE SUPPORT ==================== */
+
+.dark-mode .counter-section {
+  background-color: #16213e;
+}
+
+.dark-mode #angka-counter {
+  color: #60a5fa; /* Warna biru lebih cerah di dark mode */
+}
+
+.dark-mode .counter-btn {
+  background: #1e2937;
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+.dark-mode .counter-btn:hover {
+  background: #60a5fa;
+  color: #0f172a;
+}
+
+/* Pesan status (yang warnanya berubah-ubah) */
+#counter-pesan {
+  font-size: 19px;
+  font-weight: 500;
+  min-height: 56px;
+  margin-top: 16px;
+  transition: color 0.5s ease;
+}
+
+/* Warna default pesan di light mode */
+#counter-pesan {
+  color: #555;
+}
+
+/* Animasi meloncat untuk counter */
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-25px);
+  }
+  70% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#angka-counter {
+  display: inline-block; /* penting biar animasi jalan */
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+}
+
+.form-section {
+  padding: 60px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-container input,
+.form-container textarea {
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+}
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #2e74b5;
+}
+#btn-kirim {
+  padding: 14px;
+  background: #2e74b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#btn-kirim:hover {
+  background: #1f4e79;
+}
+
+/* Form Feedback */
+.feedback {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  text-align: center;
+  min-height: 20px;
+}
+
+.feedback.error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.feedback.success {
+  background-color: #d1fae5;
+  color: #166534;
+  border: 1px solid #a7f3d0;
+}
+
+/* Dark Mode Feedback */
+.dark-mode .feedback.error {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+.dark-mode .feedback.success {
+  background-color: #14532d;
+  color: #86efac;
+}
+
+/* Optional: supaya form lebih rapi */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.dark-mode form input,
+.dark-mode form textarea {
+  background-color: #1e2937;
+  border-color: #475569;
+  color: #e0e0e0;
+}
